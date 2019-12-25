@@ -1,0 +1,41 @@
+<!--<div *ngIf='details'>
+    <div *ngFor='let item of details'>
+        <mat-card>
+            <h2>{{item.name}}</h2>
+            <h2>{{item.price}}</h2>
+            <h3>Validity:{{item.days}} days</h3>
+            <p>Every pass will allow you to book only 6 hours of training per day</p>
+            <button mat-raised-button (click)='buy(item.id)'>Buy</button>
+        </mat-card>
+        <br>
+    </div>
+</div>-->
+
+
+
+
+<div fxLayout="column"  fxLayout.xs="column" fxLayoutAlign="center center" >
+    <div class="card" fxLayout="column" fxLayoutAlign="center stretch" >
+        <div class="header">
+            <h6> Plans & Pricing</h6>
+        </div>
+            <ul>
+                <mat-card *ngFor='let item of details' class="flex5">
+                    <li>      
+                        <h5>{{item.name}}</h5><hr>
+               
+                        <h6> &#x20b9;{{item.price}}/<h4>{{item.days}} days</h4></h6><br>
+                         <h4><h4 style="font-size:30px ;">6 hours/</h4>Day</h4><br>
+                         <span class="alink" (click)="onCreateDesc()">Know more</span><br>
+                          Would you like to select the plan? <br>
+                        <button mat-raised-button class="link5" (click)='buy(item.id)'>Select</button>
+                    </li>
+                 </mat-card>
+            </ul>
+            <br>
+            <br>
+    </div>
+</div>
+
+
+
