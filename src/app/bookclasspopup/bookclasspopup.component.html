@@ -3,19 +3,19 @@
         <br>
         <h2 class="h2">Fill the details below</h2>
         <hr>                  
-        <form>
-            <div class="matdrop">
+        <form> 
+            <div class="matdrop" *ngIf='resp'>
                 <mat-form-field>
                     <mat-label>Date</mat-label>
-                    <mat-select>
-                          <mat-option *ngFor="let date of dates" [value]="dates">{{date}}</mat-option>
-                    </mat-select>
+                    <mat-select placeholder="Select"   (selectionChange)="selected($event)" >
+                        <mat-option  *ngFor="let item of resp | keyvalue" [value]="item.value" > {{item.key}}</mat-option >
+                      </mat-select>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Time</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let time of times" [value]="times">{{time}}</mat-option>
-                    </mat-select>
+                    <mat-select placeholder="Select"  (selectionChange)="selectdate($event.value)">
+                        <mat-option *ngFor="let item of times" [value]="item">{{item}}</mat-option>
+                      </mat-select>
                 </mat-form-field>
              
 
@@ -49,11 +49,11 @@
 
                         <mat-form-field>
                             <mat-label>Language</mat-label>
-                            <mat-select>
-                                  <mat-option *ngFor="let language of languages" [value]="languages">{{language}}</mat-option>
+                            <mat-select (selectionChange)="selectlang($event)">
+                                  <mat-option *ngFor="let language of languages" [value]="language"  >{{language}}</mat-option>
                             </mat-select>
                         </mat-form-field>
-                        <button style="width: 20%; height: 40px;" mat-raised-button color="primary">Book</button>
+                        <button style="width: 20%; height: 40px;" mat-raised-button color="primary" (click)='book()'>Book</button>
 
                         
     

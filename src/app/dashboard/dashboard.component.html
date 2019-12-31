@@ -5,7 +5,7 @@
 
 
 <!-- Start  Classes for today to attend-->
-<mat-card class="mat">
+<mat-card class="mat" *ngIf='resp?.curntdayatnd[0].length > 0 || resp?.curntdayatnd[1].length > 0'>
                 <h2 style="font-size: 25px;" class="display-4 font-weight-light">Classes for today to attend.</h2>
 
          <hr>
@@ -28,7 +28,9 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">Time:{{item.time}} ||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <h6 class="align">Time:{{item.time}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join</button>
+                                                <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link will be  <br>shown before 15 minutes of <br> starting class</h6>
                                         </div>
                                 </div>
                         </mat-card>
@@ -50,7 +52,9 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">Time:{{item.time}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <h6 class="align">Time:{{item.time}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join</button>
+                                                <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link will be  <br>shown before 15 minutes of <br> starting class</h6>
                                         </div>
                                 </div>
                         </mat-card>
@@ -59,7 +63,7 @@
 <!-- End  Classes for today to attend-->
 <!-- Start Responded by trainer-->
 
-
+<!-- 
 <mat-card class="mat">
         <h2 style="font-size: 25px; padding-left: 47px;" class="display-4 font-weight-light">Response form the trainer</h2>
         <hr>
@@ -67,7 +71,7 @@
             <ul>
                 <div class="scroll" >
 
-                <li class="flex5" *ngFor='let resp of responses'>
+                <li class="flex5" *ngFor='let item of resp'>
                     <mat-card style="margin-bottom: 6px; background-color: white;">
                         <h5>{{resp.tname}}</h5>
                         <mat-divider></mat-divider>
@@ -81,13 +85,13 @@
                 </li>
                 </div>
             </ul>
-    </mat-card>    
+    </mat-card>     -->
 <!-- End Responded by trainer-->   
 
 
 <!-- Start  Classes to take today-->
 
-<mat-card class="mat">
+<mat-card class="mat" *ngIf='resp?.curntdaytke[0].length > 0 || resp?.curntdaytke[1].length > 0'>
         <h2 class="display-4 font-weight-light">Classes to take today.</h2>
 
                 <div class="scrollmenu" >
@@ -109,7 +113,9 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||Students: {{item.stdnts}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align"><a href='item.meetinglink'>Meeting Link</a>||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
+                                                <!-- <h6 class="align" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
+                                                <h6 class="align" style="color: blue;" *ngIf='item.meetinglink == ""'>Will be given 15 minutes before the class start time</h6>
                                                 <h6 class="align">Time:{{item.time}}</h6>
                                                 <h6 class="align">Email:{{item.email}}</h6>
                                                 <h6 class="align">Password:{{item.password}}</h6>
@@ -136,9 +142,11 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||Students: {{item.stdnts}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">{{item.email}} ||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                        <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
+                                                <h6 class="align"><a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Time:{{item.time}}</h6>
-                                                <h6 class="align"><a href='item.meetinglink'>Meeting Link</a>Time:{{item.time}}</h6>
+                                                <!-- <h6 class="align" style="color: blue;" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
+                                                <h6 class="align" *ngIf='item.meetinglink == ""'>Will be given 15 minutes before the class start time</h6>
                                                 <h6 class="align">Password:{{item.password}}</h6>
 
 
@@ -151,10 +159,10 @@
 <!-- End  Classes to take today-->
 
 
-<!-- Start 10 Classes you have to take-->
+<!-- Start 10 Classes you have to take from tomorrow-->
 
-<mat-card class="mat">
-        <h2 class="display-4 font-weight-light">Classes you have to take.</h2>
+<mat-card class="mat" *ngIf='resp?.clastotke[0].length > 0 || resp?.clastotke[1].length > 0'>
+        <h2 class="display-4 font-weight-light" >Classes you have to take tomorrow.</h2>
          <hr>
                 <div class="scrollmenu" >
                         <mat-card class="card" *ngFor='let item of resp?.clastotke[0]'  style="width:230px;">
@@ -175,10 +183,10 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Date-Time:{{item.datetime}}</h6>
                                         </div>
-                                        <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button>
+                                        <!-- <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button> -->
                                 </div>
                         </mat-card>
                         <mat-card class="card" *ngFor='let item of resp?.clastotke[1]'  style="width:230px;">
@@ -199,10 +207,10 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Date-Time:{{item.datetime}}</h6>
                                         </div>
-                                        <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button>
+                                        <!-- <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button> -->
                                 </div>
                         </mat-card>
         </div>
@@ -212,7 +220,7 @@
 
 <!-- Start 10 Classes to attend from tomorrow-->
 
-<mat-card class="mat">
+<mat-card class="mat"  *ngIf='resp?.clastoatnd[0].length > 0 || resp?.clastoatnd[1].length > 0'>
         <h2 class="display-4 font-weight-light"> Classes to attend from tomorrow.</h2>
          <hr>
                 <div class="scrollmenu" >
@@ -234,10 +242,10 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Date-Time:{{item.datetime}}</h6>
                                         </div>
-                                        <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button>
+                                        <!-- <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button> -->
                                 </div>
                         </mat-card>
                         <mat-card class="card" *ngFor='let item of resp?.clastoatnd[1]'  style="width:230px;">
@@ -258,10 +266,10 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Date-Time:{{item.datetime}}</h6>
                                         </div>
-                                        <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button>
+                                        <!-- <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button> -->
                                 </div>
                         </mat-card>
         </div>
@@ -269,7 +277,7 @@
 <!-- End 10 Classes to attend from tomorrow-->
 <!-- Start 10 Classes you took-->
 
-<mat-card class="mat">
+<mat-card class="mat" *ngIf='resp?.clastook[0].length > 0 || resp?.clastook[1].length > 0'>
         <h2 class="display-4 font-weight-light">Classes you took.</h2>
          <hr>
                 <div class="scrollmenu" >
@@ -291,7 +299,7 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Date-Time:{{item.datetime}}</h6>
                                         </div>
                                 </div>
@@ -314,7 +322,7 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Date-Time:{{item.datetime}}</h6>
                                         </div>
                                 </div>
@@ -323,7 +331,7 @@
 </mat-card>
 <!-- End 10 Classes you took-->
 <!-- Start 10 Classes you attended-->
-<mat-card class="mat">
+<mat-card class="mat" *ngIf='resp?.clasatnd[0].length > 0 || resp?.clasatnd[1].length > 0'>
         <h2 class="display-4 font-weight-light">Classes you Attnded.</h2>
          <hr>
                 <div class="scrollmenu" >
@@ -345,7 +353,7 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Date-Time:{{item.datetime}}</h6>
                                         </div>
                                 </div>
@@ -368,12 +376,12 @@
                                         </div>
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
-                                                <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Date-Time:{{item.datetime}}</h6>
                                         </div>
                                 </div>
                         </mat-card>
-        </div>
+        </div> 
 </mat-card>
 <!-- End 10 Classes you attended-->
 

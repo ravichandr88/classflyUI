@@ -114,10 +114,10 @@ const routes: Routes = [
     path:'blog',
     component:BlogComponent
   },
-  {
-    path:'signup',
-    component:SignupComponent
-  },
+  // {
+  //   path:'signup',
+  //   component:SignupComponent
+  // },
   {
     path:'blogs',
     component:ArticleComponent
@@ -126,10 +126,10 @@ const routes: Routes = [
     path:'article',
     component:WorddocComponent
   },
-  {
-    path:'login',
-    component:LoginComponent
-  },
+  // {
+  //   path:'login',
+  //   component:LoginComponent
+  // },
   {
     path:'articles',
     component:BlogviewComponent
@@ -174,3 +174,61 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+
+// ERROR in src\app\signup\signup.component.html(78,31): : Expected 1 arguments, but got 0.
+// src\app\dashboard\dashboard.component.html(13,48): : Property 'curntdayatnd' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(35,48): : Property 'curntdayatnd' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(94,48): : Property 'curntdaytke' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(121,48): : Property 'curntdaytke' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(160,48): : Property 'clastotke' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(184,48): : Property 'clastotke' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(219,48): : Property 'clastoatnd' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(243,48): : Property 'clastoatnd' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(276,48): : Property 'clastook' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(299,48): : Property 'clastook' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(330,48): : Property 'clasatnd' does not exist on type 'Object'.
+// src\app\dashboard\dashboard.component.html(353,48): : Property 'clasatnd' does not exist on type 'Object'.
+// src\app\complaint\complaint.component.html(8,19): : Property 'report' does not exist on type 'ComplaintComponent'.
+// src\app\complaint\complaint.component.html(14,101): : Property 'dcp' does not exist on type 'ComplaintComponent'.
+// src\app\complaint\complaint.component.html(21,97): : Property 'dcp' does not exist on type 'ComplaintComponent'.
+// src\app\complaint\complaint.component.html(14,101): : Property 'dcp' does not exist on type 'ComplaintComponent'.
+// src\app\complaint\complaint.component.html(21,97): : Property 'dcp' does not exist on type 'ComplaintComponent'.
+// src\app\complaint\complaint.component.html(24,67): : Property 'print' does not exist on type 'ComplaintComponent'.
+// src\app\complaint\complaint.component.html(28,63): : Property 'print' does not exist on type 'ComplaintComponent'.
+// src\app\about\about.component.html(125,78): : Property 'dcp' does not exist on type 'AboutComponent'.
+// src\app\about\about.component.html(125,78): : Property 'dcp' does not exist on type 'AboutComponent'.
+// src\app\feedbackpopup\feedbackpopup.component.html(93,55): : Property 'print' does not exist on type 'FeedbackpopupComponent'.
+// src\app\bookclasspopup\bookclasspopup.component.html(24,78): : Property 'sub' does not exist on type 'BookclasspopupComponent'.
+// src\app\bookclasspopup\bookclasspopup.component.html(29,75): : Property 'tpc' does not exist on type 'BookclasspopupComponent'.
+// src\app\bookclasspopup\bookclasspopup.component.html(37,77): : Property 'tpc' does not exist on type 'BookclasspopupComponent'.
+// src\app\bookclasspopup\bookclasspopup.component.html(45,68): : Property 'dcp' does not exist on type 'BookclasspopupComponent'.
+// src\app\bookclasspopup\bookclasspopup.component.html(24,78): : Property 'sub' does not exist on type 'BookclasspopupComponent'.
+// src\app\bookclasspopup\bookclasspopup.component.html(29,75): : Property 'tpc' does not exist on type 'BookclasspopupComponent'.
+// src\app\bookclasspopup\bookclasspopup.component.html(37,77): : Property 'tpc' does not exist on type 'BookclasspopupComponent'.
+// src\app\bookclasspopup\bookclasspopup.component.html(45,68): : Property 'dcp' does not exist on type 'BookclasspopupComponent'.
+// src\app\contactuspopup\contactuspopup.component.html(21,76): : Property 'dcp' does not exist on type 'ContactuspopupComponent'.
+// src\app\contactuspopup\contactuspopup.component.html(21,76): : Property 'dcp' does not exist on type 'ContactuspopupComponent'.
+// src\app\accountdetails\accountdetails.component.html(13,54): : Property 'ifsc' does not exist on type 'Object'.
+// src\app\accountdetails\accountdetails.component.html(17,67): : Property 'accno' does not exist on type
+// 'Object'.
+// src\app\accountdetails\accountdetails.component.html(20,75): : Property 'accno2' does not exist on type 'Object'.
+// src\app\accountdetails\accountdetails.component.html(24,71): : Property 'name' does not exist on type 'Object'.
+// src\app\accountdetails\accountdetails.component.html(28,66): : Property 'upi' does not exist on type 'Object'.
+// src\app\accountdetails\accountdetails.component.html(31,64): : Property 'phone' does not exist on type
+// 'Object'.
+// src\app\accountdetails\accountdetails.component.html(13,54): : Property 'ifsc' does not exist on type 'Object'.
+// src\app\accountdetails\accountdetails.component.html(17,67): : Property 'accno' does not exist on type
+// 'Object'.
+// src\app\accountdetails\accountdetails.component.html(20,75): : Property 'accno2' does not exist on type 'Object'.
+// src\app\accountdetails\accountdetails.component.html(24,71): : Property 'name' does not exist on type 'Object'.
+// src\app\accountdetails\accountdetails.component.html(28,66): : Property 'upi' does not exist on type 'Object'.
+// src\app\accountdetails\accountdetails.component.html(31,64): : Property 'phone' does not exist on type
+// 'Object'.
+// src\app\studentpost\studentpost.component.html(12,74): : Property 'sub' does not exist on type 'StudentpostComponent'.
+// src\app\studentpost\studentpost.component.html(17,71): : Property 'tpc' does not exist on type 'StudentpostComponent'.
+// src\app\studentpost\studentpost.component.html(23,90): : Property 'dcp' does not exist on type 'StudentpostComponent'.
+// src\app\studentpost\studentpost.component.html(12,74): : Property 'sub' does not exist on type 'StudentpostComponent'.
+// src\app\studentpost\studentpost.component.html(17,71): : Property 'tpc' does not exist on type 'StudentpostComponent'.
+// src\app\studentpost\studentpost.component.html(23,90): : Property 'dcp' does not exist on type 'StudentpostComponent'.

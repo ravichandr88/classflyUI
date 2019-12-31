@@ -172,13 +172,15 @@ getpic(token)
      return this.http.post(this.domain+'trainersignup',data).pipe(catchError(this.handleError))
     }
 
-    trainer(data)
+    trainer()
     {
+      var data={'session_key':sessionStorage.getItem('user')}
       return this.http.post(this.domain+'trainer',data).pipe(catchError(this.handleError))
     }
-
-    timetable(tid)
+    //get the free date and time for free level trainer
+    timetable(tid = sessionStorage.getItem('tid'))
     {
+      
       return this.http.get(this.domain+'class/'+tid).pipe(catchError(this.handleError))
     }
     // weekdates
@@ -270,6 +272,11 @@ getpic(token)
     traineracc(data)
     {
       return this.http.post(this.domain+'traineracc',data).pipe(catchError(this.handleError))
+    }
+
+    classdetails(data)
+    {
+      return this.http.post(this.domain+'classdetails',data).pipe(catchError(this.handleError))
     }
 }
 

@@ -100,17 +100,14 @@ if(resp.code == 200)
 {
   alert('Succesfully booked')
 }
-else if(resp.code == 201)
-{
-  alert('You have already booked for this class')
-}
-else if(resp.code == 202)
-{
-  alert('Seats are filled')
+else {
+  alert(resp.message)
 }
 }
 
-onCreateDesc(){
+onCreateDesc(cid,typ){
+  sessionStorage.setItem('cid',cid)
+  sessionStorage.setItem('typ',typ)
   this.dialog.open(DescriptionComponent);
 }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { DataService } from '../data.service';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-tbkingclss',
@@ -50,15 +50,15 @@ date:Date
     //  this.router.navigate(['feedback'])
      // return
    // }
-    if(sessionStorage.getItem('user')){
-    this.data.trainer({'session_key':sessionStorage.getItem('user')}).subscribe(
-      data => this.response = data,
-      (err) => console.log(err),
-      () => this.trnrdtlsuc(this.response)
-    )}
-    else{
-      this.router.navigate(['login'])
-    }
+    // if(sessionStorage.getItem('user')){
+    // this.data.trainer({'session_key':sessionStorage.getItem('user')}).subscribe(
+    //   data => this.response = data,
+    //   (err) => console.log(err),
+    //   () => this.trnrdtlsuc(this.response)
+    // )}
+    // else{
+    //   this.router.navigate(['login'])
+    // }
 
   }
 

@@ -1,7 +1,7 @@
 <br>
 <mat-card class="card" >
     <br>
-    <br>
+    <br> 
     <br>
     <h3 class="text"> What do you want to learn? </h3>
     <br>
@@ -60,7 +60,7 @@
         <h4 >Trainer:{{item.name}}</h4><br>
         <h4 >Rating:{{item.rating}}</h4><br>
         <button  color="accent" mat-raised-button>Description</button>
-        <button  color="primary" class="left" mat-raised-button (click)='book(item.id,1)'>Book? 3-Coins</button>
+        <button  color="primary" class="left" mat-raised-button (click)='book(item.id,item.lvl)'>Book? 3-Coins</button>
        </div>
     </mat-card>
 </div>

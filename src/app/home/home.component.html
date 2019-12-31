@@ -107,7 +107,7 @@
 					
 		
 			</div>
-			<button class="left" mat-raised-button (click)='book(item.id,1)'>Book $</button>
+			<button class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
 			</div>
 	</mat-card>
 		<br>
@@ -132,12 +132,12 @@
 		
 			<h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
 			<div class="a">	   
-					<h6 class="align">{{item.lang}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+					<h6 class="align">{{item.lang}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
 					<h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
 					
 		
 			</div>
-			<button class="left" mat-raised-button (click)='book(item.id,1)'>Book $</button>
+			<button class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
 			</div>
 	</mat-card>
 	</div>

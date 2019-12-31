@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {DataService } from '../data.service';
-
+import { DescriptionComponent } from '../description/description.component'
+import { MatDialog } from '@angular/material';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
-})
+}) 
 export class DashboardComponent implements OnInit {
 
   responses = 
@@ -36,7 +37,7 @@ export class DashboardComponent implements OnInit {
 //     'curntdayatnd':[[],[]]
 // }
 
-  constructor(private router: Router,private data:DataService) { }
+  constructor(private router: Router,private data:DataService,private dialog:MatDialog) { }
 
   ngOnInit() {
     if(!sessionStorage.getItem('user'))
@@ -67,7 +68,21 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  
+
+  //To open decription about the class
+  onCreateDesc(cid,typ){
+    console.log(cid,typ)
+    sessionStorage.setItem('cid',cid)
+    sessionStorage.setItem('typ',typ)
+    this.dialog.open(DescriptionComponent);
+  }
+
+  //Function to open zoom meeting link 
+  open(link)
+  {
+    // console.log(link)
+    window.open(link)
+  }
 
 // onNavigate(){
 //   window.open("https://www.google.com", "_blank");
