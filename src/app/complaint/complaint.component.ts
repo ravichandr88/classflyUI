@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
 })
 export class ComplaintComponent implements OnInit {
 
+
+  report
+  dcp
+
   constructor(private router:Router) { }
 
   ngOnInit() {
@@ -23,4 +27,9 @@ export class ComplaintComponent implements OnInit {
     //}
   }
 
+
+  print()
+  {
+    
+  }
 }

@@ -29,9 +29,15 @@ import {BookclasspopupComponent} from './bookclasspopup/bookclasspopup.component
 import { AccountdetailsComponent} from './accountdetails/accountdetails.component';
 import {StudentsearchComponent} from './studentsearch/studentsearch.component';
 import {StudentpostComponent} from'./studentpost/studentpost.component';
+import {DailyclassComponent } from './dailyclass/dailyclass.component';
 
 
 const routes: Routes = [
+  {
+    path:'daily',
+    component:DailyclassComponent
+  }
+  ,
   {
     path:'studentp',
     component:StudentpostComponent
@@ -126,10 +132,10 @@ const routes: Routes = [
     path:'article',
     component:WorddocComponent
   },
-  // {
-  //   path:'login',
-  //   component:LoginComponent
-  // },
+  {
+    path:'login',
+    component:LoginComponent
+  },
   {
     path:'articles',
     component:BlogviewComponent

@@ -2,7 +2,7 @@
         <h6>My Dashboard</h6>
 
 </div>
-
+ 
 
 <!-- Start  Classes for today to attend-->
 <mat-card class="mat" *ngIf='resp?.curntdayatnd[0].length > 0 || resp?.curntdayatnd[1].length > 0'>
@@ -114,11 +114,12 @@
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||Students: {{item.stdnts}}</h6>
                                         <div class="a">	   
                                                 <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
+                                                <button class="left"  mat-raised-button (click)="openlist(2,item.id)">Students</button>
                                                 <!-- <h6 class="align" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
                                                 <h6 class="align" style="color: blue;" *ngIf='item.meetinglink == ""'>Will be given 15 minutes before the class start time</h6>
                                                 <h6 class="align">Time:{{item.time}}</h6>
-                                                <h6 class="align">Email:{{item.email}}</h6>
-                                                <h6 class="align">Password:{{item.password}}</h6>
+                                                <!-- <h6 class="align">Email:{{item.email}}</h6>
+                                                <h6 class="align">Password:{{item.password}}</h6> -->
 
 
                                         </div>
@@ -147,6 +148,8 @@
                                                 <h6 class="align">Time:{{item.time}}</h6>
                                                 <!-- <h6 class="align" style="color: blue;" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
                                                 <h6 class="align" *ngIf='item.meetinglink == ""'>Will be given 15 minutes before the class start time</h6>
+                                                <button *ngIf='item.lvl==0' class="left" mat-raised-button (click)="openlist(2,item.id)">Students</button>
+                                                <button *ngIf='item.lvl == 1' class="left" mat-raised-button (click)="openlist(3,item.id)">Students</button>
                                                 <h6 class="align">Password:{{item.password}}</h6>
 
 
@@ -160,9 +163,9 @@
 
 
 <!-- Start 10 Classes you have to take from tomorrow-->
-
+ 
 <mat-card class="mat" *ngIf='resp?.clastotke[0].length > 0 || resp?.clastotke[1].length > 0'>
-        <h2 class="display-4 font-weight-light" >Classes you have to take tomorrow.</h2>
+        <h2 class="display-4 font-weight-light" >Classes you have to take from tomorrow.</h2>
          <hr>
                 <div class="scrollmenu" >
                         <mat-card class="card" *ngFor='let item of resp?.clastotke[0]'  style="width:230px;">

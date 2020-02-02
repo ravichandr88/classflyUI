@@ -68,10 +68,10 @@ book(cid,typ)
     
   }
 
-  if(!sessionStorage.getItem('feed'))
-  {
-    this.router.navigate(['/feedback'])
-  }
+  // if(!sessionStorage.getItem('feed'))
+  // {
+  //   this.router.navigate(['/feedback'])
+  // }
 
   if(typ == 0)
   {

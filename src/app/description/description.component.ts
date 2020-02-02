@@ -8,7 +8,9 @@ import { DataService } from '../data.service'
 export class DescriptionComponent implements OnInit {
 
   constructor(private data:DataService) { }
-resp:Object
+resp:any={
+  'clss':{'dcp':''}
+}
   ngOnInit() {
     this.data.classdetails({'session_key':sessionStorage.getItem('user'),
                              'cid':sessionStorage.getItem('cid'),

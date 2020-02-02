@@ -15,7 +15,7 @@ export class AccountdetailsComponent implements OnInit {
   accerr:string=''
   ifscerr:string=''
   usererr:string = ''
-  data:Object={
+  data={
     'ifsc':'',
     'accno':'',
     'accno2':'',
@@ -84,5 +84,5 @@ export class AccountdetailsComponent implements OnInit {
     else{
       alert(resp.message)
     }
-  }
+  } 
 }

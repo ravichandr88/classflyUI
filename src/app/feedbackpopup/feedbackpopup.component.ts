@@ -12,5 +12,9 @@ export class FeedbackpopupComponent implements OnInit {
   ngOnInit() {
   }
   
+  print()
+  {
+    
+  }
 
 }

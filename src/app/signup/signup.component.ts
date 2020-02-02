@@ -166,8 +166,8 @@ export class SignupComponent implements OnInit {
  user:any
   
   // Method to sign in with google.
-  singIn(platform : string): void {
-    platform = GoogleLoginProvider.PROVIDER_ID;
+  singIn(): void {
+    var platform = GoogleLoginProvider.PROVIDER_ID;
     this._socioAuthServ.signIn(platform).then(
       (response) => {
         console.log(platform + " logged in user data is= " , response);

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {DataService } from '../data.service';
 import { DescriptionComponent } from '../description/description.component'
+import { StdntslistComponent } from '../stdntslist/stdntslist.component'
 import { MatDialog } from '@angular/material';
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +26,14 @@ export class DashboardComponent implements OnInit {
 ];
 
 
-  resp:Object
+  resp:any={
+    'curntdayatnd':[[],[]],
+    'curntdaytke':[[],[]],
+    'clastotke':[[],[]],
+    'clasatnd':[[],[]],
+    'clastook':[[],[]],
+    'clastoatnd':[[],[]]
+  }
 //   dashdata = {
 //     'clasatnd':[[],[]],  
 //     'clastoatnd':[[],[]],
@@ -82,6 +90,14 @@ export class DashboardComponent implements OnInit {
   {
     // console.log(link)
     window.open(link)
+  }
+
+  openlist(typ,id)
+  {
+    sessionStorage.setItem('cid',id)
+    sessionStorage.setItem('typ',typ)
+    this.dialog.open(StdntslistComponent,{
+      width: '250px'})
   }
 
 // onNavigate(){

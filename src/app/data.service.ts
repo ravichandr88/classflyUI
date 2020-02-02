@@ -223,7 +223,7 @@ getpic(token)
       }
       else if(tpc=='')
       {
-        return this.http.get(this.domain+'classesl/'+typ+'/'+sub+'/'+lang).pipe(catchError(this.handleError))
+        return this.http.get(this.domain+'classesl/'+sub+'/'+lang).pipe(catchError(this.handleError))
       }
       else{
         return this.http.get(this.domain+'classes/'+typ+'/'+sub+'/'+tpc+'/'+lang).pipe(catchError(this.handleError))
@@ -277,6 +277,33 @@ getpic(token)
     classdetails(data)
     {
       return this.http.post(this.domain+'classdetails',data).pipe(catchError(this.handleError))
+    }
+
+    create_request(data)
+    {
+      return this.http.post(this.domain+'requestclass',data).pipe(catchError(this.handleError))
+    }
+
+    getmentorclass()
+    {
+      return this.http.get(this.domain+'mentoring').pipe(catchError(this.handleError))
+    }
+    //api/buymentorclass
+    buymentorclass(data)
+    {
+      return this.http.post(this.domain+'buymentorclass',data).pipe(catchError(this.handleError))
+    }
+
+    //get the paid classes
+    paidclasses()
+    {
+      return this.http.get(this.domain+'classesl').pipe(catchError(this.handleError))
+    }
+
+    //to get the registered students for specific class
+    getstdlist(data)
+    {
+      return this.http.post(this.domain+'studentlist',data).pipe(catchError(this.handleError))
     }
 }
 

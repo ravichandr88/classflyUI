@@ -99,8 +99,7 @@ if (this.sub == '' || this.tpc == '' || this.date == null || this.tme == null ||
   return
 }
 
-//book the class
-this.data.bookfreeclass({
+var bookform = {
   'session_key':sessionStorage.getItem('user'),
   'tid':sessionStorage.getItem('tid'),
   'sub':this.sub,
@@ -109,13 +108,27 @@ this.data.bookfreeclass({
   'date':this.date,
   'tme':this.tme,
   'lang':this.lang
-}).subscribe(
+}
+
+if(sessionStorage.getItem('level')!= 'trainer')
+{
+//book the class
+this.data.bookfreeclass(bookform).subscribe(
   data => this.bresp = data,
   (err) => console.log(err),
   () => this.bksucc(this.bresp)
 )
 }
-
+else
+{
+  bookform.date=bookform.date.split(' ')[1]
+  this.data.bookpaidclass(bookform).subscribe(
+    data => this.bresp = data,
+    (err) => console.log(err),
+    () => this.bksucc(this.bresp)
+  )
+}
+}
 //succes from booking class
 bksucc(resp)
 {

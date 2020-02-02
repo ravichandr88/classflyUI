@@ -58,6 +58,8 @@ import { StudentpostComponent } from './studentpost/studentpost.component';
 
 
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'angular4-social-login';
+import { DailyclassComponent } from './dailyclass/dailyclass.component';
+import { StdntslistComponent } from './stdntslist/stdntslist.component';
 
 
 const google_oauth_client_id:string =  '66089437958-9qai3nufijclobprh164n62hfcparv6i.apps.googleusercontent.com' 
@@ -118,7 +120,9 @@ export function provideConfig() {
     ContactuspopupComponent,
     AccountdetailsComponent,
     StudentsearchComponent,
-    StudentpostComponent
+    StudentpostComponent,
+    DailyclassComponent,
+    StdntslistComponent
   ],
   imports: [
     BrowserModule,
@@ -147,6 +151,6 @@ export function provideConfig() {
   bootstrap: [AppComponent],
   entryComponents:[SignupComponent,LoginComponent,PaymentComponent,DescriptionComponent,
   ComplaintComponent,FeedbackpopupComponent,BookclasspopupComponent,TrainersignupComponent,
-  BuyclassdescpopComponent,HelppopupComponent,ContactuspopupComponent ,StudentpostComponent,AccountdetailsComponent],
+  BuyclassdescpopComponent,HelppopupComponent,ContactuspopupComponent ,StudentpostComponent,AccountdetailsComponent,StdntslistComponent],
 })
 export class AppModule { }

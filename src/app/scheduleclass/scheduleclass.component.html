@@ -36,9 +36,20 @@
                                 
                             </li>
 
+                            <!-- If this is the trainer from classfly -->
+                            <li *ngIf = "trnrdtls?.level == 'trainer'">    
+                                Hi,<br>
+                                Your current rating is {{trnrdtls.rating}}<br>
+                                And you are at level {{trnrdtls.level}}.<br>
+                                You have total {{trnrdtls.feed}}  feedbacks<br>
+                                You can book 6  classes per day.<br>
+                                <button mat-raised-button class="link5" (click)="onCreateBook()">Book now</button>
+                                
+                            </li>
+
                     </mat-card>
         
-                    <mat-card class="flex6" *ngIf='trnrdtls?.level != "free"'>
+                    <!-- <mat-card class="flex6" *ngIf='trnrdtls?.level != "free"'>
                         <li>
                               You don't have private class room!<br>
                               Your private class room expires on 05/Dec/2019.<br>
@@ -47,7 +58,7 @@
                           
                         </li>
                     </mat-card>
-        
+         -->
                 </ul>
                 <br>    
         <hr>
