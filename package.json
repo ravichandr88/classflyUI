@@ -33,7 +33,7 @@
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1",
     "express":"*",
-    "body-parser":"*",
+    "body-parser":"*"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.800.6",
