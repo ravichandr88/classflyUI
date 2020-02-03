@@ -34,7 +34,6 @@
     "zone.js": "~0.9.1",
     "express":"*",
     "body-parser":"*",
-    "bcrypt": "^0.8.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.800.6",
