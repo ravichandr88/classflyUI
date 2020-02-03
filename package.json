@@ -31,7 +31,10 @@
     "mat-video": "^2.7.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "express":"*",
+    "body-parser":"*",
+    "bcrypt": "^0.8.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.800.6",
