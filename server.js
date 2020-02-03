@@ -9,7 +9,7 @@ app.use(express.static('./dict/uptown'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname,'/dict/uptown/index.html'));
+res.sendFile(path.join(__dirname,'/dist/uptown/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
