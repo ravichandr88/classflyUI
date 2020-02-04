@@ -9,6 +9,8 @@ export class SharedService {
 
 
   onLoginEvent: EventEmitter<any> = new EventEmitter();
+  
+  onLogoutEvent: EventEmitter<any> = new EventEmitter();
 
   // change() {
   //   console.log('change started'); 
@@ -17,5 +19,5 @@ export class SharedService {
 
   //  getEmittedValue() {
   //   return this.onMainEvent;
-  // }
+  // } 
 }

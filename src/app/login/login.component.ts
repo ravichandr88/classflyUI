@@ -99,7 +99,7 @@ export class LoginComponent implements OnInit {
   updateOnMain(onMain):void {
     var hin = 1
     this.service.onLoginEvent.emit(onMain);
-    console.log(onMain)
+    console.log(onMain) 
   }
 
 }

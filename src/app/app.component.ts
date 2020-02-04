@@ -12,9 +12,9 @@ export class AppComponent {
 
   onMain: boolean = false;
   hin:number = 0
-  constructor(service: SharedService,private router : Router) {
+  constructor(private service: SharedService,private router : Router) {
     service.onLoginEvent.subscribe(
-      (onMain) => {
+      (onMain) => { 
         this.onMain = onMain;
         this.user = true
         if(sessionStorage.getItem('tid') != null)
@@ -63,12 +63,15 @@ export class AppComponent {
     }
 
  
-  logout()
+  logouts()
   {
+    console.log('Logged out')
     sessionStorage.removeItem('user')
     sessionStorage.removeItem('tid')
     this.user = null
     this.router.navigate([''])
     window.location.reload();
+    this.service.onLogoutEvent.emit(true)
+    
   }
 }

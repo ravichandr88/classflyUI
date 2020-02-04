@@ -7,6 +7,7 @@ import {PaymentComponent} from 'src/app/payment/payment.component';
 import { TrainersignupComponent } from 'src/app/trainersignup/trainersignup.component';
 import { HelppopupComponent} from 'src/app/helppopup/helppopup.component'
 import { ContactuspopupComponent } from 'src/app/contactuspopup/contactuspopup.component';
+import { SharedService } from 'src/app/shared.service';
 
 
 @Component({
@@ -17,16 +18,44 @@ import { ContactuspopupComponent } from 'src/app/contactuspopup/contactuspopup.c
 export class SidenavListComponent implements OnInit {
 
   @Output() sidenavClose = new EventEmitter();
+
+
+ onMain:any
+
  
-  constructor( private dialog:MatDialog) { }
-  
-  laptop:boolean = true
-  user:boolean = false
-  tid:boolean = false
-  subscription
+ laptop:boolean = true
+ user:boolean = false
+ tid:boolean = false
+ subscription
+
+
+
+  constructor( private dialog:MatDialog, private service:SharedService) { 
+    service.onLoginEvent.subscribe(
+      (onMain) => { 
+        this.onMain = onMain;
+        this.user = true
+        if(sessionStorage.getItem('tid') != null)
+        {
+          this.tid = true
+        }
+      }
+   );
+//    service.onLogoutEvent.subscribe(
+//     (onMain) => { 
+//       this.onMain = onMain;
+//       this.user = false
+//       this.tid = false
+//       console.log(onMain)
+//     }
+//  );
+  }
+   
+
+
   ngOnInit()
   {
-   
+    
    if(sessionStorage.getItem('user') != null)
    {
      this.user = true
@@ -59,6 +88,15 @@ export class SidenavListComponent implements OnInit {
       this.sidenavClose.emit();
     }
     
+  }
+
+  logout()
+  {
+    sessionStorage.removeItem('user')
+    sessionStorage.removeItem('tid')
+    this.user = false
+    this.tid=false
+    this.onSidenavClose()
   }
   onCreateReport(){
     this.dialog.open(ComplaintComponent)
@@ -101,5 +139,10 @@ export class SidenavListComponent implements OnInit {
             
               }
 
+
+
+              //login even call
+
+             
 }
 

@@ -96,8 +96,8 @@ getpic(token)
 
 
 
-  domain = "http://127.0.0.1:8000/api/"
-  // domain ='https://datafly.herokuapp.com/api/'
+  // domain = "http://127.0.0.1:8000/api/"
+  domain ='https://datafly.herokuapp.com/api/'
 
     postData(data)
     {
