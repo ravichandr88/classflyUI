@@ -63,15 +63,15 @@ export class AppComponent {
     }
 
  
-  logouts()
-  {
-    console.log('Logged out')
-    sessionStorage.removeItem('user')
-    sessionStorage.removeItem('tid')
-    this.user = null
-    this.router.navigate([''])
-    window.location.reload();
-    this.service.onLogoutEvent.emit(true)
+  // logout()
+  // {
+  //   console.log('Logged out')
+  //   sessionStorage.removeItem('user')
+  //   sessionStorage.removeItem('tid')
+  //   this.user = null
+  //   this.router.navigate([''])
+  //   window.location.reload();
+  //   this.service.onLogoutEvent.emit(true)
     
-  }
+  // }
 }
