@@ -23,16 +23,16 @@
    
    
 
-   <div class="grid-container">
-         <div class="grid-item">  <a href="/profile">
+   <div class="grid-container" >
+         <!-- <div class="grid-item">  <a href="/profile">
             <img src="assets/img/anixdp.png" style="padding-left: 8px;padding-bottom: 8px;" width="90" height="90">
-         </a></div>
+         </a></div> -->
          <div class="grid-item">
          
             <div class="grid-item"><a href="/profile">
-            <h6 style="color: green;">Anix Ahmed</h6></a></div>   
-            <div class="grid-item"><small>Followers:5</small></div>
-            <div class="grid-item"><small>Coins : 5$</small></div>
+            <h6 style="color: green;" *ngIf='user'>{{username}}</h6></a></div>   
+            <div class="grid-item"  *ngIf='user'><small>Followers:5</small></div>
+            <div class="grid-item" *ngIf='user'><small>Coins : 5$</small></div>
          
          </div> 
        
@@ -80,12 +80,15 @@
    <img src="assets/img/f-icons/coin.png" alt="">
     <span class="nav-caption">Buy Coins</span>
  </a>
-
-
+ <a mat-list-item routerLink="/daily" (click)="onSidenavClose()" ">
+   <img src="assets/img/f-icons/profile.png" alt="">
+    <span class="nav-caption">Daily Classes</span>
+ </a>
+<!-- 
  <a mat-list-item routerLink="" (click)="onSidenavClose()" (click)="onCreateReport()">
    <img src="assets/img/f-icons/profile.png" alt="">
     <span class="nav-caption">Report</span>
- </a>
+ </a> -->
 
 
  <a mat-list-item *ngIf='tid' routerLink="/buyclassroom" (click)="onSidenavClose()">

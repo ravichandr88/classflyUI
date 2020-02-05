@@ -305,6 +305,11 @@ getpic(token)
     {
       return this.http.post(this.domain+'studentlist',data).pipe(catchError(this.handleError))
     }
+
+    getusrdtls()
+    {
+      return this.http.post(this.domain+'usrdtls',{'session_key':sessionStorage.getItem('user')}).pipe(catchError(this.handleError))
+    }
 }
 
 //AQXIPo4Hpi6kgXDROksIHruQ6txCx6QLE6fJ37VCNrepTIYya4Hnf4QOgnXPcmBeNcFZsVPOn_c2UKMIA8jrARifUzMl3J6EWHVW5ylATF82diywg1rvQ4PeMNd1FIq5Db0LIWlcgm4jv79Jmbsxwkj5TiGmumYapv5QoWt-JatfcjqNAnlHDqTDuElgREcht7KsRte9uUUMeyVN3nXHlSci7az16T9qYXs2XNRSv88CJ_lEfKISi0H_pwS3gCb7i84ck4Gh19wV6pkVPPBtmc7iIJdjzBhvHiuvcf0v7nPXVXpGo8yk4I4EF5S5_0qR6QAAtX-oa97xK7AT0-mQab3J_tz4gA

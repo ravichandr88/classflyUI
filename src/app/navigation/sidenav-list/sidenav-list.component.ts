@@ -8,6 +8,7 @@ import { TrainersignupComponent } from 'src/app/trainersignup/trainersignup.comp
 import { HelppopupComponent} from 'src/app/helppopup/helppopup.component'
 import { ContactuspopupComponent } from 'src/app/contactuspopup/contactuspopup.component';
 import { SharedService } from 'src/app/shared.service';
+import { DataService } from 'src/app/data.service';
 
 
 @Component({
@@ -27,10 +28,13 @@ export class SidenavListComponent implements OnInit {
  user:boolean = false
  tid:boolean = false
  subscription
+ username=''
+ followers=''
+ coins:any
 
 
 
-  constructor( private dialog:MatDialog, private service:SharedService) { 
+  constructor( private dialog:MatDialog, private service:SharedService,private data:DataService) { 
     service.onLoginEvent.subscribe(
       (onMain) => { 
         this.onMain = onMain;
@@ -39,6 +43,7 @@ export class SidenavListComponent implements OnInit {
         {
           this.tid = true
         }
+
       }
    );
 //    service.onLogoutEvent.subscribe(
@@ -63,6 +68,7 @@ export class SidenavListComponent implements OnInit {
      {
        this.tid = true
      }
+     
    }
    if(window.innerWidth <500)
    {
@@ -144,5 +150,33 @@ export class SidenavListComponent implements OnInit {
               //login even call
 
              
+
+              //gret the user detils
+              resp
+              usrdtls()
+              {
+                this.data.getusrdtls().subscribe(
+                  data => this.resp = data,
+                  (err) => console.log(err),
+                  () => {
+                      this.sucfun(this.resp)
+                  }
+                )
+              }
+
+
+              sucfun(resp)
+              {
+                if(resp.code ==200)
+                {
+                  this.username=resp.username
+                  this.followers = resp.following
+                  this.coins=resp.coins
+                }
+                else
+                {
+                  alert(resp.message)
+                }
+              }
 }
 
