@@ -5,6 +5,7 @@ import { AboutComponent } from 'src/app/about/about.component';
 import { LoginComponent } from 'src/app/login/login.component';
 import { PaymentComponent} from 'src/app/payment/payment.component';
 import {StudentpostComponent} from 'src/app/studentpost/studentpost.component';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,21 @@ export class HeaderComponent implements OnInit {
  
   @Output() public sidenavToggle = new EventEmitter();
  
-  constructor(private dialog:MatDialog) { }
+  user:boolean=false
+  constructor(private dialog:MatDialog, private service:SharedService) { 
+    service.onLoginEvent.subscribe(
+      (onMain) => { 
+        this.user = true
+      }
+   );
+
+   service.onLogoutEvent.subscribe(
+    (onMain) => { 
+      this.user = false
+    }
+ );
+  }
+
  
   ngOnInit() {
   }
