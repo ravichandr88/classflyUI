@@ -26,6 +26,7 @@ export class PaymentComponent implements OnInit {
 
 buy()
 {
+  console.log(this.coin)
   if(this.coin  < 1)
   {
     alert('Coins should be of positive number')

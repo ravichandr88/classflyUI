@@ -11,9 +11,9 @@
    
 	 <a href=""><img style="width: 90px; padding-left:13px"  src="assets/img/coins.png" alt=""></a> 
 
-	 <div>
-		<input class="fun" type='number' placeholder="0" [(ngModel)]='coin'>		
-		<button class=""  mat-raised-button (click)='buy()' color='primary'>Buy</button>
+	 <div> 
+		<input class="fun" type='number' placeholder="0" [(ngModel)]='coin' name='coin'>		
+		<button  mat-raised-button (click)='buy()' color='primary'>Buy</button>
 
 		<h6 class="pay">Pay &#x20b9; {{coin*2}}</h6>
 
