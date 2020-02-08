@@ -63,7 +63,7 @@
  </a>
 
 
- <a mat-list-item  *ngIf='!tid' routerLink="/trainersignup" (click)="onSidenavClose()">
+ <a mat-list-item  *ngIf='!tid'  (click)="onSidenavClose()" (click)='opentrainersignup()'>
    <img src="assets/img/f-icons/profile.png" alt="">
     <span class="nav-caption">Become Trainer</span>
  </a>

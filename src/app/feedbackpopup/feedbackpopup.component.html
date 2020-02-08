@@ -13,21 +13,21 @@
                 <label class="label">Communication?</label>
                 <p>
                     <label class="radio-inline">
-                    <input type="radio" name="comm" id="radio_experience" value="poor" >
+                    <input type="radio" name="comm" id="radio_experience" value="poor" (click)='comm(1)'>
                     Poor
                     </label>
 
                     <label class="radio-inline">
-                    <input type="radio" name="comm" id="radio_experience" value="fair" >
+                    <input type="radio" name="comm" id="radio_experience" value="fair" (click)='comm(2)'>
                     Fair
                     </label>
 
                     <label class="radio-inline">
-                    <input type="radio" name="comm" id="radio_experience" value="good" >
+                    <input type="radio" name="comm" id="radio_experience" value="good" (click)='comm(3)'>
                     Good
                     </label>
                     <label class="radio-inline">
-                            <input type="radio" name="comm" id="radio_experience" value="excelent" >
+                            <input type="radio" name="comm" id="radio_experience" value="excelent" (click)='comm(4)'>
                             Excelent
                     </label>
                 </p>
@@ -36,21 +36,21 @@
                     <label class="label">Content Preparation?</label>
                     <p>
                         <label class="radio-inline">
-                        <input type="radio" name="cont" id="radio_experience" value="poor" >
+                        <input type="radio" name="cont" id="radio_experience" value="poor" (click)='feed(1)'>
                         Poor
                         </label>
     
                         <label class="radio-inline">
-                        <input type="radio" name="cont" id="radio_experience" value="fair" >
+                        <input type="radio" name="cont" id="radio_experience" value="fair" (click)='feed(2)'>
                         Fair
                         </label>
     
                         <label class="radio-inline">
-                        <input type="radio" name="cont" id="radio_experience" value="good" >
+                        <input type="radio" name="cont" id="radio_experience" value="good" (click)='feed(3)' >
                         Good
                         </label>
                         <label class="radio-inline">
-                                <input type="radio" name="cont" id="radio_experience" value="excelent" >
+                                <input type="radio" name="cont" id="radio_experience" value="excelent" (click)='feed(4)'>
                                 Excelent
                         </label>
                     </p>
@@ -59,21 +59,21 @@
                         <label class="label">Time Management?</label>
                         <p>
                             <label class="radio-inline">
-                            <input type="radio" name="time" id="radio_experience" value="poor" >
+                            <input type="radio" name="time" id="radio_experience" value="poor" (click)='tmng(1)'>
                             Poor
                             </label>
         
                             <label class="radio-inline">
-                            <input type="radio" name="time" id="radio_experience" value="fair" >
+                            <input type="radio" name="time" id="radio_experience" value="fair" (click)='tmng(2)'>
                             Fair
                             </label>
         
                             <label class="radio-inline">
-                            <input type="radio" name="time" id="radio_experience" value="good" >
+                            <input type="radio" name="time" id="radio_experience" value="good" (click)='tmng(3)'>
                             Good
                             </label>
                             <label class="radio-inline">
-                                    <input type="radio" name="time" id="radio_experience" value="excelent" >
+                                    <input type="radio" name="time" id="radio_experience" value="excelent" (click)='tmng(4)'>
                                     Excelent
                             </label>
                         </p>
@@ -84,7 +84,7 @@
                </div>
                <div class="container">
                     <div class="comment">
-                            <textarea class="textinput" placeholder="Type here" ></textarea>
+                            <textarea class="textinput" placeholder="Type here" [(ngModel)]='commnts' ></textarea>
                     </div>
                 </div> 
 

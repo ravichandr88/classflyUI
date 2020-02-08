@@ -96,11 +96,11 @@ const routes: Routes = [
     path:'confirmemail/:sess',
     component:EmailconfirmComponent
   },
-  {
-    path:'trainersignup',
-    component:TrainersignupComponent
-  }
-  ,
+  // {
+  //   path:'trainersignup',
+  //   component:TrainersignupComponent
+  // }
+  // ,
   {
     path:'alpha',
     component:AlphaComponent

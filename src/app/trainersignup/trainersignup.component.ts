@@ -4,6 +4,7 @@ import { DataService } from '../data.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AccountdetailsComponent } from '../accountdetails/accountdetails.component';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-trainersignup',
@@ -12,7 +13,7 @@ import { AccountdetailsComponent } from '../accountdetails/accountdetails.compon
 })
 export class TrainersignupComponent implements OnInit {
 
-  constructor(public dialog: MatDialog,private route: ActivatedRoute,private formBuilder : FormBuilder,private data : DataService, private router : Router) { }
+  constructor(private dialogref:MatDialogRef<TrainersignupComponent>,public dialog: MatDialog,private route: ActivatedRoute,private formBuilder : FormBuilder,private data : DataService, private router : Router) { }
   myForm : FormGroup
   submitted : boolean = false
 
@@ -26,18 +27,22 @@ export class TrainersignupComponent implements OnInit {
   imgresp:Object
 
   ngOnInit() {
-    if (this.route.params['value'].access_token != '' && this.route.params['value'].session_id == '')
-    {
-      console.log(this.route.params['value'].access_token,this.route.params['value'].session_id);
+    // if (this.route.params['value'].access_token != '' && this.route.params['value'].session_id == '')
+    // {
+    //   console.log(this.route.params['value'].access_token,this.route.params['value'].session_id);
    
-      sessionStorage.setItem('user',this.route.params['value'].session_id)
-      //get profile picture
+    //   sessionStorage.setItem('user',this.route.params['value'].session_id)
+    //   //get profile picture
+     
+    // }
+     if(!sessionStorage.getItem('user'))
+    {
+      
+      this.dialogref.close()
+      this.dialog.open(LoginComponent)
+      return this.router.navigate([''])
      
     }
-     // if(!sessionStorage.getItem('user'))
-    // {
-    //   return this.router.navigate(['login'])
-    // }
    // if(!sessionStorage.getItem('feed'))
    // {
    //   return this.router.navigate(['feedback'])
@@ -214,7 +219,7 @@ return
   }).subscribe(
     data => this.resp =data,
     (err) => console.log(err),
-    () => {}
+    () => { this.scus(this.resp)}
   )
 
 }
@@ -223,7 +228,8 @@ scus(resp)
 {
   if(resp.code == 200)
   {
-    this.router.navigate(['accountdetails'])
+    this.dialog.open(AccountdetailsComponent)
+    this.dialogref.close()
   }
   else
   {

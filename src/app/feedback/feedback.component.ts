@@ -63,24 +63,26 @@ insuc(resp)
 resp
   save(id)
   {
-    this.trnsc = id
-    if(this.rate == 0)
-    {
-      alert('Please provide rating,It cannot be Zero')
-      return
-    }
-    var f ={
-      'session_key':sessionStorage.getItem('user'),
-  'trnsc':this.trnsc,
-   'feedback':this.fdbck,
-   'rating':this.rate
-            }
+    //set tsid in session and call dialog popup
+     sessionStorage.setItem('tsid', id)
+     this.onCreateFeed()
+  //   if(this.rate == 0)
+  //   {
+  //     alert('Please provide rating,It cannot be Zero')
+  //     return
+  //   }
+  //   var f ={
+  //     'session_key':sessionStorage.getItem('user'),
+  // 'trnsc':this.trnsc,
+  //  'feedback':this.fdbck,
+  //  'rating':this.rate
+  //           }
 
-    this.data.feedback(f).subscribe(
-      data => this.resp = data,
-      (err) => console.log(err),
-      () => this.succs(this.resp)
-    )
+  //   this.data.feedback(f).subscribe(
+  //     data => this.resp = data,
+  //     (err) => console.log(err),
+  //     () => this.succs(this.resp)
+  //   )
   }
 
 

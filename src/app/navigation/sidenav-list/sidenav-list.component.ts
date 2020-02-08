@@ -184,5 +184,11 @@ export class SidenavListComponent implements OnInit {
                   alert(resp.message)
                 }
               }
+
+              //open trainer signup popup
+              opentrainersignup()
+              {
+                this.dialog.open(TrainersignupComponent)
+              }
 }
 
