@@ -42,6 +42,8 @@ export class BookclasspopupComponent implements OnInit {
   lang=''
   //free class booking response
   bresp
+  //image url input
+  img='https://www.classfly.in/assets/img/vcard.jpeg'
   ngOnInit() {
     //if type is free, get the dates and times at once
 this.data.timetable().subscribe(

@@ -43,6 +43,7 @@ export class SidenavListComponent implements OnInit {
         {
           this.tid = true
         }
+        this.usrdtls()
 
       }
    );
@@ -73,6 +74,11 @@ export class SidenavListComponent implements OnInit {
    if(window.innerWidth <500)
    {
      this.laptop = false
+   }
+
+   if(sessionStorage.getItem('user'))
+   {
+     this.usrdtls()
    }
   }
 

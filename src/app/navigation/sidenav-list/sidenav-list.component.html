@@ -24,15 +24,15 @@
    
 
    <div class="grid-container" >
-         <!-- <div class="grid-item">  <a href="/profile">
-            <img src="assets/img/anixdp.png" style="padding-left: 8px;padding-bottom: 8px;" width="90" height="90">
-         </a></div> -->
+         <div class="grid-item">  
+            <img src="assets/img/butterfly.png" style="padding-left: 8px;padding-bottom: 8px;" width="90" height="90">
+         </div>
          <div class="grid-item">
          
-            <div class="grid-item"><a href="/profile">
-            <h6 style="color: green;" *ngIf='user'>{{username}}</h6></a></div>   
-            <div class="grid-item"  *ngIf='user'><small>Followers:5</small></div>
-            <div class="grid-item" *ngIf='user'><small>Coins : 5$</small></div>
+            <div class="grid-item">
+            <h6 style="color: green;" *ngIf='user'>{{username}}</h6></div>   
+            <div class="grid-item"  *ngIf='user && followers!=0'><small>Followers:{{followers}}</small></div>
+            <div class="grid-item" *ngIf='user'><small>Coins : {{coins}}$</small></div>
          
          </div> 
        
@@ -55,6 +55,11 @@
 <a mat-list-item *ngIf="!user"  (click)="onSidenavClose()" (click)="onCreateLogin()">
    <img src="assets/img/f-icons/login.png" alt="">
     <span class="nav-caption">Login</span>
+ </a>
+
+ <a mat-list-item *ngIf="user"  routerLink="/dash" (click)="onSidenavClose()" >
+   <img src="assets/img/f-icons/login.png" alt="">
+    <span class="nav-caption">Dashboard</span>
  </a>
 
 
@@ -90,11 +95,11 @@
     <span class="nav-caption">Report</span>
  </a> -->
 
-
+<!-- 
  <a mat-list-item *ngIf='tid' routerLink="/buyclassroom" (click)="onSidenavClose()">
    <img src="assets/img/f-icons/profile.png" alt="">
     <span class="nav-caption">BuyClassRooms</span>
- </a>
+ </a> -->
 
 
  <a mat-list-item *ngIf='user' routerLink="/" (click)="logout()">

@@ -31,12 +31,11 @@
 
             </div>
             <div class="img">
-                
                     <mat-form-field appearance="outline">
                             <mat-label>Image url for class</mat-label>
-                            <input matInput placeholder="topic" value="url" [(ngModel)]='tpc' name='topic'>
+                            <input matInput placeholder="topic" value="img" [(ngModel)]='img' name='images'>
                           </mat-form-field>
-                          <img  src="assets/img/facebook.png" alt="">
+                          <img  src="{{img}}" alt="">
 
             </div>
             <div class="desc">

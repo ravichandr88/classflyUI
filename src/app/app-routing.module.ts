@@ -77,11 +77,11 @@ const routes: Routes = [
     path:'about', 
     component:AboutComponent
   },
-  {
-    path:'buyclassroom', 
-    component:BuyclsrmComponent
-  }
-  ,
+  // {
+  //   path:'buyclassroom', 
+  //   component:BuyclsrmComponent
+  // }
+  // ,
   {
     path:'complaint',
     component:ComplaintComponent
