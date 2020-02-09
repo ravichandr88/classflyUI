@@ -19,10 +19,14 @@ export class HomeComponent implements OnInit {
   
  
  ngOnInit() {
-  this.sub = this.route.snapshot.params.val
-  if(this.sub != ''){
-  this.search()
-  }
+  this.data.initialserach().subscribe(
+    data => this.resp = data,
+    (err) => alert('PLease check your internet connection')
+  )
+  // this.sub = this.route.snapshot.params.val
+  // if(this.sub != ''){
+  // this.search()
+  // }
   }
   
   typ = 0
@@ -50,6 +54,7 @@ export class HomeComponent implements OnInit {
     if(this.sub=='')
     {
       alert('Please input the subject')
+      console.log('subject is empty')
       return
     }
     this.data.searchall(this.typ,this.sub,this.tpc,this.lang).subscribe(

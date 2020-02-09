@@ -18,9 +18,14 @@ export class SearchclassComponent implements OnInit {
  
  ngOnInit() {
   this.sub = this.route.snapshot.params.val
-  if(this.sub != ''){
-  this.search()
-  }
+
+    this.data.initialserach().subscribe(
+      data => this.resp=data,
+      (err) => alert('PLease check your internet connection')
+    )
+  // if(this.sub != ''){
+  // this.search()
+  // }
   }
   
   typ = 0
