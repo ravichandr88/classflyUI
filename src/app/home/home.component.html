@@ -13,9 +13,9 @@
 		<div class="flex6">
 			<li>
 				<img class="vimg" src="assets/img/vcard.jpeg" alt="">
-				<div class="bottom-right">
+				<!-- <div class="bottom-right">
 					Live Interactive Session With<br> 
-					Working Professionals</div>
+					Working Professionals</div> -->
 
 			  
 			</li>
@@ -74,10 +74,10 @@
 			<span class="nav-caption">60.RS per hour</span>
 		 </a>-->
 
-		 <h2 class="h2">
+		 <!-- <h2 class="h2">
 			Live Interactive Session With<br> 
 			Working Professionals
-		</h2>
+		</h2> -->
 		 <hr>
 	<div *ngIf='resp'>
 	<div class="scrollmenu" >
@@ -86,7 +86,7 @@
 			<div class="course_head overlay">
 			<img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
 			<div class="authr_meta">
-				<img src="assets/img/anix.png" alt="">
+				<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
 				<span>
 					{{item.name}}||
 					<img src="assets/img/f-icons/star.png" alt="">
@@ -95,14 +95,13 @@
 					<img src="assets/img/f-icons/star.png" alt="">
 					<img src="assets/img/f-icons/star.png" alt="">
 				</span>
-				
 			</div>
 			
 			</div>
 		
 			<h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
-			<div class="a">	   
-					<h6 class="align">{{item.lang}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+			<div class="a" (click)="onCreateDesc(item.id,item.lvl)">	   
+					<h6 class="align">{{item.lang}}||<a style="color: blue;">Description</a></h6>
 					<h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
 					
 		
@@ -116,7 +115,7 @@
 			<div class="course_head overlay">
 			<img class="img-fluid w-100" src="assets/img/courses/hiber.png" alt="">
 			<div class="authr_meta">
-				<img src="assets/img/anix.png" alt="">
+				<img src="assets/img/butterfly1.png" style='border-radius: 50%;'alt="">
 				<span>
 					{{item.name}}||
 					<img src="assets/img/f-icons/star.png" alt="">
@@ -131,8 +130,8 @@
 			</div>
 		
 			<h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
-			<div class="a">	   
-					<h6 class="align">{{item.lang}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+			<div class="a" style="cursor: pointer" (click)="onCreateDesc(item.id,item.lvl)">	   
+					<h6 class="align" style="cursor: pointer">{{item.lang}}||<a style="color: blue;" >Description</a></h6>
 					<h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
 					
 		

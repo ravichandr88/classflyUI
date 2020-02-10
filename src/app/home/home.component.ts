@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { DescriptionComponent } from '../description/description.component';
 import { MatDialog } from '@angular/material';
+import { LoginComponent } from 'src/app/login/login.component'
 
 @Component({
   selector: 'app-home',
@@ -69,7 +70,8 @@ book(cid,typ)
 {
   if(!sessionStorage.getItem('user'))
   {
-      this.router.navigate(['login'])
+     this.dialog.open(LoginComponent)
+     return
     
   }
 
@@ -111,6 +113,11 @@ else {
 }
 
 onCreateDesc(cid,typ){
+  if(!sessionStorage.getItem('user'))
+  {
+    this.dialog.open(LoginComponent)
+    return
+  }
   sessionStorage.setItem('cid',cid)
   sessionStorage.setItem('typ',typ)
   this.dialog.open(DescriptionComponent);

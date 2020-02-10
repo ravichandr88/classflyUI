@@ -9,7 +9,8 @@ import { HelppopupComponent} from 'src/app/helppopup/helppopup.component'
 import { ContactuspopupComponent } from 'src/app/contactuspopup/contactuspopup.component';
 import { SharedService } from 'src/app/shared.service';
 import { DataService } from 'src/app/data.service';
-
+import { Router } from '@angular/router'
+ 
 
 @Component({
   selector: 'app-sidenav-list',
@@ -34,7 +35,7 @@ export class SidenavListComponent implements OnInit {
 
 
 
-  constructor( private dialog:MatDialog, private service:SharedService,private data:DataService) { 
+  constructor(private router:Router,private dialog:MatDialog, private service:SharedService,private data:DataService) { 
     service.onLoginEvent.subscribe(
       (onMain) => { 
         this.onMain = onMain;
@@ -189,6 +190,11 @@ export class SidenavListComponent implements OnInit {
               opentrainersignup()
               {
                 this.dialog.open(TrainersignupComponent)
+              }
+
+              home()
+              {
+                this.router.navigate([''])
               }
 }
 

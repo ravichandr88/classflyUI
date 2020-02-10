@@ -24,8 +24,8 @@
                 <mat-icon>arrow_right_alt</mat-icon>SignIn</button></li>
                 <button *ngIf='!user' class="sign" mat-raised-button (click)="onCreateSignUp()">
              <mat-icon>add</mat-icon>SignUp</button>  
-             <button class="stpost" *ngIf ='user' mat-raised-button (click)="onCreatePost()">
-                <mat-icon>note_add</mat-icon>Find Trainer</button>  
+             <!-- <button class="stpost" *ngIf ='user' mat-raised-button (click)="onCreatePost()">
+                <mat-icon>note_add</mat-icon>Find Trainer</button>   -->
              <li class="nav-item active"><span class="nav-link" *ngIf='user' style="color: green; cursor: pointer; " (click)="onCreateCoin()">BUY COINS: $</span></li>
         </ul>
     </div>
