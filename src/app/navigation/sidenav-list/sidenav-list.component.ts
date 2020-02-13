@@ -179,6 +179,7 @@ export class SidenavListComponent implements OnInit {
                   this.username=resp.username
                   this.followers = resp.following
                   this.coins=resp.coins
+                  sessionStorage.setItem('level',resp.level)
                 }
                 else
                 {

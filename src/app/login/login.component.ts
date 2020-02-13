@@ -80,7 +80,7 @@ export class LoginComponent implements OnInit {
         this.psswderr = false
         alert('Please confirm your email.')
       }
-    else
+    else 
     {
       sessionStorage.setItem('user',resp.sessionId)
       if (resp.tid != null)
