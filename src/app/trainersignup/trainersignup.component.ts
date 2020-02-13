@@ -26,6 +26,7 @@ export class TrainersignupComponent implements OnInit {
 
   imgresp:Object
 
+  user:boolean=false
   ngOnInit() {
     // if (this.route.params['value'].access_token != '' && this.route.params['value'].session_id == '')
     // {
@@ -35,6 +36,8 @@ export class TrainersignupComponent implements OnInit {
     //   //get profile picture
      
     // }
+   
+
      if(!sessionStorage.getItem('user'))
     {
       
@@ -47,7 +50,7 @@ export class TrainersignupComponent implements OnInit {
    // {
    //   return this.router.navigate(['feedback'])
    // }
-
+    this.user = true
     this.myForm = this.formBuilder.group({
       'linkurl':['', Validators.required],
       'imgurl':['', ],

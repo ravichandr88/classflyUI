@@ -82,7 +82,7 @@
 
 
 
-<div fxLayout="column"  fxLayoutAlign="center center">
+<div *ngIf='user' fxLayout="column"  fxLayoutAlign="center center">
     <div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 900px;">
      
     <form [formGroup]='myForm'>
