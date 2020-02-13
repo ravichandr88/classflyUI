@@ -72,7 +72,7 @@ export class DataService {
   console.log(data)
    return this.http.post('https://www.linkedin.com/oauth/v2/accessToken?client_id=77ml0pujhg3d8h&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Fdcp&client_secret=ZbN7FHCyOkwziCP7&code='+data,f,{headers})
   }
-//http%3A%2F%2Flocalhost%3A4200%2Fdcp
+//http%3A%2F%2Flocalhost%3A4200%2Fdcp  
 
 
 //linkedin profile api
