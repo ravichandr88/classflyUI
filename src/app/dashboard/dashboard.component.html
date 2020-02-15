@@ -27,7 +27,7 @@
                                         <div class="a">	   
                                                 <h6 class="align">Time:{{item.time}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join</button>
-                                                <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link</h6>
+                                                <!-- <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link</h6> -->
                                         </div>
                                 </div>
                         </mat-card>
@@ -51,7 +51,7 @@
                                         <div class="a">	   
                                                 <h6 class="align">Time:{{item.time}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join</button>
-                                                <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link </h6>
+                                                <!-- <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link </h6> -->
                                         </div>
                                 </div>
                         </mat-card>
@@ -113,7 +113,7 @@
                                                 <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
                                                 <button class="left"  mat-raised-button (click)="openlist(2,item.id)">Students</button>
                                                 <!-- <h6 class="align" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
-                                                <h6 class="align" style="color: blue;" *ngIf='item.meetinglink == ""'>Meeting Link</h6>
+                                                <!-- <h6 class="align" style="color: blue;" *ngIf='item.meetinglink == ""'>Meeting Link</h6> -->
                                                 <h6 class="align">Time:{{item.time}}</h6>
                                                 <!-- <h6 class="align">Email:{{item.email}}</h6>
                                                 <h6 class="align">Password:{{item.password}}</h6> -->
@@ -144,7 +144,7 @@
                                                 <h6 class="align"><a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Time:{{item.time}}</h6>
                                                 <!-- <h6 class="align" style="color: blue;" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
-                                                <h6 class="align" *ngIf='item.meetinglink == ""'>Meeting Link</h6>
+                                                <!-- <h6 class="align" *ngIf='item.meetinglink == ""'>Meeting Link</h6> -->
                                                 <button *ngIf='item.lvl==0' class="left" mat-raised-button (click)="openlist(2,item.id)">Students</button>
                                                 <button *ngIf='item.lvl == 1' class="left" mat-raised-button (click)="openlist(3,item.id)">Students</button>
                                                 <h6 class="align">Password:{{item.password}}</h6>
