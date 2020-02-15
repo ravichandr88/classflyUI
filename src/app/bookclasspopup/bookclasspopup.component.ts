@@ -71,7 +71,13 @@ this.data.timetable().subscribe(
     //the selected date
     this.date = data
     //list of hours in the day available for booking the class
+    
     this.times = ev.source.selected.value;
+    // var l=[]
+    // for(var i in x)
+    // {
+    //   if(i)
+    // }
   }
 
   //to record the time the user have selected, after selecting the date
@@ -112,7 +118,7 @@ var bookform = {
   'lang':this.lang
 }
 
-if(sessionStorage.getItem('level')!= 'trainer')
+if(sessionStorage.getItem('level')!= 'trainer') 
 {
 //book the class
 this.data.bookfreeclass(bookform).subscribe(

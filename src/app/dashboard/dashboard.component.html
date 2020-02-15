@@ -1,12 +1,9 @@
-<div class="header">
-        <h6>My Dashboard</h6>
 
-</div>
  
 
 <!-- Start  Classes for today to attend-->
 <mat-card class="mat" *ngIf='resp?.curntdayatnd[0].length > 0 || resp?.curntdayatnd[1].length > 0'>
-                <h2 style="font-size: 25px;" class="display-4 font-weight-light">Classes for today to attend.</h2>
+                <h2 style="font-size: 25px;" class="display-4 font-weight-light">Classes to attend today.<h5>(Meeting Link will be shown 15 minutes before the class starts)</h5></h2>
 
          <hr>
                 <div class="scrollmenu" >
@@ -30,7 +27,7 @@
                                         <div class="a">	   
                                                 <h6 class="align">Time:{{item.time}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join</button>
-                                                <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link will be  <br>shown before 15 minutes of <br> starting class</h6>
+                                                <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link</h6>
                                         </div>
                                 </div>
                         </mat-card>
@@ -54,7 +51,7 @@
                                         <div class="a">	   
                                                 <h6 class="align">Time:{{item.time}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join</button>
-                                                <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link will be  <br>shown before 15 minutes of <br> starting class</h6>
+                                                <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link </h6>
                                         </div>
                                 </div>
                         </mat-card>
@@ -92,7 +89,7 @@
 <!-- Start  Classes to take today-->
 
 <mat-card class="mat" *ngIf='resp?.curntdaytke[0].length > 0 || resp?.curntdaytke[1].length > 0'>
-        <h2 class="display-4 font-weight-light">Classes to take today.</h2>
+        <h2 class="display-4 font-weight-light">Classes to take today.<h5>Meeting Link will be shown 15 minutes before the class starts)</h5></h2>
 
                 <div class="scrollmenu" >
                         <mat-card class="card" *ngFor='let item of resp?.curntdaytke[0]'  style="width:230px;">
@@ -116,7 +113,7 @@
                                                 <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
                                                 <button class="left"  mat-raised-button (click)="openlist(2,item.id)">Students</button>
                                                 <!-- <h6 class="align" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
-                                                <h6 class="align" style="color: blue;" *ngIf='item.meetinglink == ""'>Will be given 15 minutes before the class start time</h6>
+                                                <h6 class="align" style="color: blue;" *ngIf='item.meetinglink == ""'>Meeting Link</h6>
                                                 <h6 class="align">Time:{{item.time}}</h6>
                                                 <!-- <h6 class="align">Email:{{item.email}}</h6>
                                                 <h6 class="align">Password:{{item.password}}</h6> -->
@@ -147,7 +144,7 @@
                                                 <h6 class="align"><a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
                                                 <h6 class="align">Time:{{item.time}}</h6>
                                                 <!-- <h6 class="align" style="color: blue;" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
-                                                <h6 class="align" *ngIf='item.meetinglink == ""'>Will be given 15 minutes before the class start time</h6>
+                                                <h6 class="align" *ngIf='item.meetinglink == ""'>Meeting Link</h6>
                                                 <button *ngIf='item.lvl==0' class="left" mat-raised-button (click)="openlist(2,item.id)">Students</button>
                                                 <button *ngIf='item.lvl == 1' class="left" mat-raised-button (click)="openlist(3,item.id)">Students</button>
                                                 <h6 class="align">Password:{{item.password}}</h6>
