@@ -75,6 +75,7 @@ export class AccountdetailsComponent implements OnInit {
   {
     if(resp.code == 200)
     {
+      alert('Go to your email and confirm ZOOM account')
       this.dialogRef.close()
     }
     else if(resp.code == 201)
