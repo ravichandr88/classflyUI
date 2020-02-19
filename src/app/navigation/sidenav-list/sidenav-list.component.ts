@@ -48,6 +48,13 @@ export class SidenavListComponent implements OnInit {
 
       }
    );
+//to update coins when done
+   service.coinEvent.subscribe(
+     (coins) => {
+       this.coins=coins;
+       console.log(coins)
+     }
+   );
 //    service.onLogoutEvent.subscribe(
 //     (onMain) => { 
 //       this.onMain = onMain;

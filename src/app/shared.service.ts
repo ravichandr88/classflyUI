@@ -12,6 +12,8 @@ export class SharedService {
   
   onLogoutEvent: EventEmitter<any> = new EventEmitter();
 
+  coinEvent: EventEmitter<any>=new EventEmitter();
+
   // change() {
   //   console.log('change started'); 
   //    this.onMainEvent.emit(true);

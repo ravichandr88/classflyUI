@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DescriptionComponent } from '../description/description.component';
 import { MatDialog } from '@angular/material';
 import { LoginComponent } from 'src/app/login/login.component'
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { LoginComponent } from 'src/app/login/login.component'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private data:DataService,private router : Router,private route: ActivatedRoute,private dialog:MatDialog) { }
+  constructor(private data:DataService,private service:SharedService,private router : Router,private route: ActivatedRoute,private dialog:MatDialog) { }
  
  typo:string[]=['Paid','Free']
  typn:string[]=['Free','Paid']
@@ -106,6 +107,8 @@ sucresp(resp)
 if(resp.code == 200)
 {
   alert('Succesfully booked')
+  this.service.coinEvent.emit(resp.coins)
+
 }
 else {
   alert(resp.message)

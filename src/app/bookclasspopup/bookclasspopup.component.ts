@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { SharedService } from '../shared.service';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
@@ -21,7 +22,7 @@ export class BookclasspopupComponent implements OnInit {
   languages: string[] = [
     'English','Kannada','Tamil','Hindi','Bengali','Assamese'
 ];
-  constructor(private router:Router,private data:DataService, private dialogRef: MatDialogRef<BookclasspopupComponent>) { }
+  constructor(private router:Router,private data:DataService,private service:SharedService, private dialogRef: MatDialogRef<BookclasspopupComponent>) { }
 
 
   //response object
@@ -142,8 +143,10 @@ bksucc(resp)
 {
   if(resp.code == 200)
   {
+    this.service.coinEvent.emit(resp.coins)
     this.router.navigate(['dash'])
     this.dialogRef.close()
+   
   }
   else
   {

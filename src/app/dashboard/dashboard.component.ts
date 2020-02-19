@@ -4,6 +4,7 @@ import {DataService } from '../data.service';
 import { DescriptionComponent } from '../description/description.component'
 import { StdntslistComponent } from '../stdntslist/stdntslist.component'
 import { MatDialog } from '@angular/material';
+import { SharedService } from 'src/app/shared.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -45,7 +46,7 @@ export class DashboardComponent implements OnInit {
 //     'curntdayatnd':[[],[]]
 // }
 
-  constructor(private router: Router,private data:DataService,private dialog:MatDialog) { }
+  constructor(private router: Router,private data:DataService,private service:SharedService,private dialog:MatDialog) { }
 
   ngOnInit() {
     if(!sessionStorage.getItem('user'))
@@ -73,6 +74,7 @@ export class DashboardComponent implements OnInit {
     if(resp.code == 200)
     {
       this.resp = resp.data
+      this.service.coinEvent.emit(resp.coins)
     }
   }
 
