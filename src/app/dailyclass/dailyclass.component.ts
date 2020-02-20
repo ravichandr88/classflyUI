@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-dailyclass',
@@ -17,7 +18,8 @@ mclasses:any=
 ];
 
 
-  constructor(private data:DataService) {
+  constructor(private data:DataService,private service:SharedService) {
+
    }
 
   ngOnInit() {
@@ -62,6 +64,31 @@ buyresp:any
     }
   }
 
+//buy daily classes
+bresp:any
+buydailyc(cid)
+{
+  this.data.ubookclass({'session_key':sessionStorage.getItem('user'),'cid':cid}).subscribe(
+    data => this.bresp = data,
+    (err) => console.log(err),
+    () => this.sucresp(this.bresp)
+  )
 
+}
+
+
+
+sucresp(resp)
+{
+if(resp.code == 200)
+{
+  alert('Succesfully booked')
+  this.service.coinEvent.emit(resp.coins)
+
+}
+else {
+  alert(resp.message)
+}
+}
   
 }

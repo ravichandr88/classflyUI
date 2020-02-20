@@ -34,6 +34,10 @@ export class HeaderComponent implements OnInit {
 
  
   ngOnInit() {
+    if(sessionStorage.getItem('user'))
+    {
+      this.user = true
+    }
   }
  
   public onToggleSidenav = () => {

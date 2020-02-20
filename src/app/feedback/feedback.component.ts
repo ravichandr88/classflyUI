@@ -61,11 +61,11 @@ insuc(resp)
   }
 
 resp
-  save(id)
-  {
-    //set tsid in session and call dialog popup
-     sessionStorage.setItem('tsid', id)
-     this.onCreateFeed()
+  // save(id)
+  // {
+  //   //set tsid in session and call dialog popup
+  //    sessionStorage.setItem('tsid', id)
+  //    this.onCreateFeed()
   //   if(this.rate == 0)
   //   {
   //     alert('Please provide rating,It cannot be Zero')
@@ -83,19 +83,27 @@ resp
   //     (err) => console.log(err),
   //     () => this.succs(this.resp)
   //   )
-  }
+  // }
 
 
-  succs(resp)
-  {
-if(resp.code==200)
-{
-// this.router.navigate([''])
-this.ngOnInit()
-}
-  }
-  onCreateFeed(){
-  this.dialog.open(FeedbackpopupComponent);
+//   succs(resp)
+//   {
+// if(resp.code==200)
+// {
+// // this.router.navigate([''])
+// this.ngOnInit()
+// }
+  // }
+
+
+  onCreateFeed(id){
+    sessionStorage.setItem('tsid',id)
+  const popup = this.dialog.open(FeedbackpopupComponent);
+    popup.afterClosed().subscribe(
+      result => {
+        this.ngOnInit()
+      }
+    )
   }
   onCreateDesc(){
     this.dialog.open(DescriptionComponent);

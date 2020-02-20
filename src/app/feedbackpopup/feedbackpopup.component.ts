@@ -27,13 +27,15 @@ export class FeedbackpopupComponent implements OnInit {
     }
   }
   
-
+cmnt=''
   //upload the feedback
   print()
   {
     if(this.commv==0 || this.contv==0||this.tmngv==0)
     {
-      alert('Please provide rating')
+      // alert('Please provide rating')
+      this.cmnt='Please fill in all feilds'
+      return
     }
     this.data.feedback({'session_key':sessionStorage.getItem('user'),
     'tsid':this.tsid,
