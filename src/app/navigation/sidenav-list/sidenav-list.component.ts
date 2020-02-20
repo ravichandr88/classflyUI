@@ -139,7 +139,12 @@ export class SidenavListComponent implements OnInit {
         //    dialogConfig.disableClose = true;
           //  dialogConfig.autoFocus= true;
             //dialogConfig.width = "40%";
-            this.dialog.open(PaymentComponent);
+            const paymnt = this.dialog.open(PaymentComponent);
+            paymnt.afterClosed().subscribe(
+              result => {
+                this.usrdtls()
+              }
+            )
         
           }
           onCreatetsign(){

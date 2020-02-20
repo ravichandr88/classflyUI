@@ -23,7 +23,17 @@ export class HomeComponent implements OnInit {
  ngOnInit() {
   this.data.initialserach().subscribe(
     data => this.resp = data,
-    (err) => alert('PLease check your internet connection')
+    (err) => alert('PLease check your internet connection'),
+    ()=>{
+      if(this.resp[0].length==0&&this.resp[1].length==0)
+      {
+        this.mssg='No classes found'
+      }
+      else
+      {
+        this.mssg=''
+      }
+    }
   )
   // this.sub = this.route.snapshot.params.val
   // if(this.sub != ''){
@@ -35,8 +45,8 @@ export class HomeComponent implements OnInit {
   sub:string=''
   tpc:string=''
   lang:string=''
-
-  resp:Object
+mssg=''
+  resp:any=[[],[]]
 
   type()
   {
@@ -61,7 +71,17 @@ export class HomeComponent implements OnInit {
     }
     this.data.searchall(this.typ,this.sub,this.tpc,this.lang).subscribe(
       data => this.resp = data,
-      (err) => console.log(err)
+      (err) => console.log(err),
+      ()=>{
+        if(this.resp[0].length==0&&this.resp[1].length==0)
+        {
+          this.mssg='No classes found'
+        }
+        else
+      {
+        this.mssg=''
+      }
+      }
     )
   }
 
