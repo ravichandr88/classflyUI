@@ -19,9 +19,9 @@
 }
 .funb{
     width:15%;
-    height: 35px;
+    height: 45px;
     left:13px;
-    font-size: 12px;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
 }
@@ -30,9 +30,15 @@
   }
 .fun5{
     width:70%;
-text-align: center;
 color:red;
 margin: -20px;
+//text-align: justify;
+font-size: 12px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: normal;
+margin-left: 12px;
+margin-top: -10px;
+
 }
 .h {
     text-decoration: none;
@@ -64,6 +70,13 @@ margin: -20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
   }
+  .error {
+    margin-top: 0px;
+    text-align: left;
+    font-size: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+  }
   .sign {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
@@ -72,7 +85,7 @@ margin: -20px;
   }
 
   mat-form-field { /* Changes the input styling to just about nothing so that button styling can take over */
-    font-size: 10px;
+    font-size: 13px;
   }
   
 
