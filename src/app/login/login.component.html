@@ -9,19 +9,19 @@
             <a href=""><img style="width: 40px; padding-left:13px"  src="assets/img/instagram.png" alt=""></a> 
             <a href=""><img style="width: 40px; padding-left:13px"  src="assets/img/linked.png" alt=""></a> <br><br>   
              <mat-form-field  class="fun" appearance="outline">
-                    <mat-label><span class="lnr lnr-user"></span>Username</mat-label>
+                    <mat-label><span class="lnr lnr-user"></span>Userame</mat-label>
                     <input matInput formControlName='username' placeholder="UserName">
             </mat-form-field>
             <br>
-            <h6 class ="fun5" *ngIf='submitted && f.username.errors?.required'>Username cannot be empty</h6>
+            <!--<h6 class ="fun5" *ngIf='submitted && f.username.errors?.required'>Username cannot be empty</h6>-->
             <h6 class ="fun5" *ngIf='usrerr'>Username does not exists</h6>
             <mat-form-field class ="fun" appearance="outline">
                     <mat-label><span class="lnr lnr-lock"></span>Password</mat-label>
                     <input matInput formControlName='password' placeholder="Password" type='password'>
             </mat-form-field><br>
             <!-- <div *ngIf="submitted && f.password.errors" > -->
-                <h6 class ="fun5" *ngIf="f.password.errors?.required">Password is required</h6>
-                <h6 class ="fun5" *ngIf="f.password.errors?.minlength">Password must be at least 6 characters</h6>
+                <!--<h6 class ="fun5" *ngIf="f.password.errors?.required">Password is required</h6>-->
+                <!--<h6 class ="fun5" *ngIf="f.password.errors?.minlength">Password must be at least 6 characters</h6>-->
                 <h6 class ="fun5" *ngIf="confirm">Please confirm your email</h6>
                 <!-- </div> -->
             <h6  class ="fun5" *ngIf='psswderr'>Password do not match</h6>
