@@ -97,7 +97,7 @@
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
                                                 <h6 class="align">Time:{{item.time}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
-                                                <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join</button>
+                                               <br> <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join Class</button>
                                                 <!-- <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link</h6> -->
                                         </div>
                                 </div>
@@ -121,7 +121,7 @@
                                         <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
                                         <div class="a">	   
                                                 <h6 class="align">Time:{{item.time}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
-                                                <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join</button>
+                                                <br><button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join Meeting</button>
                                                 <!-- <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link </h6> -->
                                         </div>
                                 </div>
@@ -160,7 +160,7 @@
                                                 <!-- <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button> -->
                                         </div>
                                 </li>
-                                <li class="card" *ngFor='let item of resp?.clastoatnd[1]'  style="width:230px;">
+                                <li class="card" *ngFor='let item of resp?.clastoatnd[1]'  style="width:230px;height:240px">
                                         <div class="single_course">
                                                 <div class="course_head overlay">
                                                         <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
@@ -272,10 +272,10 @@
 </mat-tab>
 <mat-tab label="Active Posted Classes" *ngIf='resp?.curntdaytke[0].length > 0 || resp?.curntdaytke[1].length > 0'> 
         <mat-card class="mat">
-                <h2 class="head">Classes to take today.<h5>Meeting Link will be shown 15 minutes before the class starts)</h5></h2>
+                <h2 class="head">Classes to take today.<h5 class="head">(Meeting Link will be shown 15 minutes before the class starts)</h5></h2>
         
                         <ul>
-                                <li class="card" *ngFor='let item of resp?.curntdaytke[0]'  style="width:230px;">
+                                <li class="card" *ngFor='let item of resp?.curntdaytke[0]'  style="width:230px; height:240px">
                                         <div class="single_course">
                                                 <div class="course_head overlay">
                                                         <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
@@ -292,12 +292,13 @@
                                                          </div>
                                                 </div>
                                                 <h6 class="alignb">{{item.subject}}||{{item.topic}}||Students: {{item.stdnts}}</h6>
-                                                <div class="a">	   
-                                                        <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
-                                                        <button class="left"  mat-raised-button (click)="openlist(2,item.id)">Students</button>
+                                                <div class="a">	
+                                                        <h6 class="align">Time:{{item.time}}</h6>
+                                                        <button class="left1"  mat-raised-button (click)="openlist(2,item.id)">Students</button>
+                                                        <button class="left1" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
+
                                                         <!-- <h6 class="align" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
                                                         <!-- <h6 class="align" style="color: blue;" *ngIf='item.meetinglink == ""'>Meeting Link</h6> -->
-                                                        <h6 class="align">Time:{{item.time}}</h6>
                                                         <!-- <h6 class="align">Email:{{item.email}}</h6>
                                                         <h6 class="align">Password:{{item.password}}</h6> -->
         
@@ -305,7 +306,7 @@
                                                 </div>
                                         </div>
                                 </li>
-                                <li class="card" *ngFor='let item of resp?.curntdaytke[1]'  style="width:230px;">
+                                <li class="card" *ngFor='let item of resp?.curntdaytke[1]'  style="width:230px; height:240px">
                                         <div class="single_course">
                                                 <div class="course_head overlay">
                                                         <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
@@ -323,14 +324,14 @@
                                                 </div>
                                                 <h6 class="alignb">{{item.subject}}||{{item.topic}}||Students: {{item.stdnts}}</h6>
                                                 <div class="a">	   
-                                                                <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
-                                                        <h6 class="align"><a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
-                                                        <h6 class="align">Time:{{item.time}}</h6>
+                                                        <h6 class="align">Time:{{item.time}} || <a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6><br>
                                                         <!-- <h6 class="align" style="color: blue;" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
                                                         <!-- <h6 class="align" *ngIf='item.meetinglink == ""'>Meeting Link</h6> -->
-                                                        <button *ngIf='item.lvl==0' class="left" mat-raised-button (click)="openlist(2,item.id)">Students</button>
-                                                        <button *ngIf='item.lvl == 1' class="left" mat-raised-button (click)="openlist(3,item.id)">Students</button>
-                                                        <h6 class="align">Password:{{item.password}}</h6>
+                                                        <button *ngIf='item.lvl==0' class="left1" mat-raised-button (click)="openlist(2,item.id)">Students</button>
+                                                        <button *ngIf='item.lvl == 1' class="left1" mat-raised-button (click)="openlist(3,item.id)">Students</button>
+                                                        <button class="left1" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
+
+                                                       <!-- <h6 class="align">Password:{{item.password}}</h6>-->
         
         
                                                 </div>
@@ -344,7 +345,7 @@
                 <h2 class="head" >Classes you have to take from tomorrow.</h2>
                  <hr>
                         <ul>
-                                <li class="card" *ngFor='let item of resp?.clastotke[0]'  style="width:230px;">
+                                <li class="card" *ngFor='let item of resp?.clastotke[0]'  style="width:230px; height:240px">
                                         <div class="single_course">
                                                 <div class="course_head overlay">
                                                         <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
@@ -368,7 +369,7 @@
                                                 <!-- <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button> -->
                                         </div>
                                 </li>
-                                <li class="card" *ngFor='let item of resp?.clastotke[1]'  style="width:230px;">
+                                <li class="card" *ngFor='let item of resp?.clastotke[1]'  style="width:230px;height:240px">
                                         <div class="single_course">
                                                 <div class="course_head overlay">
                                                         <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">

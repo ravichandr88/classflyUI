@@ -148,8 +148,22 @@ div.a {
 }
 .left{
   font-size: 14px;
-  width: 40%;
-  left: 60px;
+  width: 100%;
+  //left: 60px;
+  align-items: center;
+  color: blue;
+  background-color: powderblue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  height: 35px;
+  margin-bottom: 5px;
+}
+.left1{
+  font-size: 14px;
+  width: 47%;
+  //left: 60px;
+  margin-left: 5px;;
+  align-items: center;
   color: blue;
   background-color: powderblue;
   font-family: Arial, Helvetica, sans-serif;
