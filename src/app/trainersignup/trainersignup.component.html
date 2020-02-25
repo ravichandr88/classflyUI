@@ -78,12 +78,11 @@
 </section>
 -->
 
-<br>
 
 
 
 <div *ngIf='user' fxLayout="column"  fxLayoutAlign="center center">
-    <div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 900px;">
+    <div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 800px;">
      
     <form [formGroup]='myForm'>
             <br>
@@ -111,7 +110,7 @@
                   
         <textarea rows="4" cols="30" name="message" [(ngModel)]='dscp'    formControlName='dscp'>
         </textarea>
-        <p>{{dscp.length}}</p>
+        <!--<p>{{dscp.length}}</p>-->
         <p>{{dscperr}}</p>
         <textarea rows="3" cols="30" [(ngModel)]='techkeys'    formControlName='techkeys' placeholder="Technical keywords separated by comma. e.g Python,Java,Data Science.">
         </textarea>    
@@ -131,7 +130,7 @@
             <div class="grid-container2">
                     <div class="grid-item2">
                             <a href="/profile">
-                                <img  src="{{imgurl}}" style="padding-left: 8px;padding-bottom: 8px;" width="90" height="90">
+                                <img  src="{{imgurl}}" style="padding-left: 8px;padding-bottom: 8px;" width="50" height="50">
                              </a>
                     </div>
 
@@ -145,10 +144,6 @@
 </ul>
 
 </form>
-<br>
     </div></div>
-     
-<br>
-<br>
 
 
