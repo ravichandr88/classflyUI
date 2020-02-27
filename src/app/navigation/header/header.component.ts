@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
    service.onLogoutEvent.subscribe(
     (onMain) => { 
       this.user = false
+      console.log(this.user)
     }
  );
   }

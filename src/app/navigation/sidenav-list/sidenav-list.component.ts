@@ -117,6 +117,7 @@ export class SidenavListComponent implements OnInit {
     this.user = false
     this.tid=false
     this.onSidenavClose()
+    this.service.onLogoutEvent.emit(true)
   }
   onCreateReport(){
     this.dialog.open(ComplaintComponent)

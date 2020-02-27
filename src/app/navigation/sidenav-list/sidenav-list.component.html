@@ -43,6 +43,18 @@
 
 
 
+  <a mat-list-item routerLink="/" (click)="onSidenavClose()">
+   <img src="assets/img/f-icons/search.png" alt="">
+    <span class="nav-caption">Home</span>
+ </a>  
+
+
+ <a mat-list-item routerLink="/daily" (click)="onSidenavClose()" >
+   <img src="assets/img/f-icons/profile.png" alt="">
+    <span class="nav-caption">Daily Classes</span>
+ </a>
+
+ 
   <a mat-list-item *ngIf="!user" routerLink="/signup" (click)="onSidenavClose()" (click)="onCreateSignUp()">
 
          <img src="assets/img/f-icons/signup.png" alt="">
@@ -75,20 +87,13 @@
  </a>
 
 
- <a mat-list-item routerLink="/" (click)="onSidenavClose()">
-   <img src="assets/img/f-icons/search.png" alt="">
-    <span class="nav-caption">Search Class</span>
- </a>  
 
 
  <a mat-list-item *ngIf='user' routerLink="" (click)="onSidenavClose()" (click)="onCreateCoin()">
    <img src="assets/img/f-icons/coin.png" alt="">
     <span class="nav-caption">Buy Coins</span>
  </a>
- <a mat-list-item routerLink="/daily" (click)="onSidenavClose()" >
-   <img src="assets/img/f-icons/profile.png" alt="">
-    <span class="nav-caption">Daily Classes</span>
- </a>
+ 
 <!-- 
  <a mat-list-item routerLink="" (click)="onSidenavClose()" (click)="onCreateReport()">
    <img src="assets/img/f-icons/profile.png" alt="">
@@ -122,6 +127,12 @@
    <img src="assets/img/f-icons/contact.png" alt="">
     <span class="nav-caption">Contact Us</span>
  </a>
+
+ 
+ <a mat-list-item routerLink="/about" (click)="onSidenavClose()">
+   <img src="assets/img/f-icons/search.png" alt="">
+    <span class="nav-caption">About Us</span>
+ </a>  
  <hr>
 <a href=""><img style="width: 40px; padding-left:13px"  src="assets/img/facebook.png" alt=""></a> 
 <a href=""><img style="width: 40px; padding-left:13px"  src="assets/img/instagram.png" alt=""></a> 
