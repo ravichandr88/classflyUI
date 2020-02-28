@@ -14,7 +14,7 @@
             </mat-form-field>
             <br>
             <!--<h6 class ="fun5" *ngIf='submitted && f.username.errors?.required'>Username cannot be empty</h6>-->
-            <h6 class ="fun5" *ngIf='usrerr'>Username does not exists</h6>
+            <h6 class ="fun5" *ngIf='usrerr'>Username or Email does not exists</h6>
             <mat-form-field class ="fun" appearance="outline">
                     <mat-label><span class="lnr lnr-lock"></span>Password</mat-label>
                     <input matInput formControlName='password' placeholder="Password" type='password'>
