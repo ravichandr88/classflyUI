@@ -34,6 +34,7 @@
         
             <h6 class="fun5" *ngIf="submitted && f.email.errors?.required">Email is required</h6>
             <h6 class="fun5" *ngIf="submitted && f.email.errors?.email">Email must be a valid email address</h6>
+            <h6 class="fun5" *ngIf='key =="email"  && submitted' >{{err}}</h6>
         
 
         
