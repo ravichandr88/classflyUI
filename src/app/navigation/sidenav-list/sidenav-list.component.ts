@@ -210,5 +210,12 @@ export class SidenavListComponent implements OnInit {
               {
                 this.router.navigate([''])
               }
+
+
+
+          open(url)
+          {
+            window.open(url);
+          }
 }
 
