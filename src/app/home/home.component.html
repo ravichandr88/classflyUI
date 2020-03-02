@@ -139,7 +139,7 @@
 					
 		
 			</div>
-			<button class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
+			<button *ngIf='item.price != 0 class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
 			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>FREE</button>
 				
 		</div>
