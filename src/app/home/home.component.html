@@ -107,8 +107,10 @@
 					
 		
 			</div>
-			<button class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
-			</div>
+			<button *ngIf='item.price != 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
+			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>FREE</button>
+			
+		</div>
 	</mat-card>
 		<br>
 		<mat-card class="card" *ngFor='let item of resp[0]'  style="width:230px;">
@@ -138,7 +140,9 @@
 		
 			</div>
 			<button class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
-			</div>
+			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>FREE</button>
+				
+		</div>
 	</mat-card>
 	</div>
 	
