@@ -17,7 +17,7 @@
 <mat-tab-group>
         <mat-tab label="Attnded classes" *ngIf='resp?.clasatnd[0].length > 0 || resp?.clasatnd[1].length > 0'> 
                 <mat-card class="mat" >
-                        <h2 class="head">Classes you Attnded.</h2>
+                        <h2 class="head">Classes you Attended.</h2>
                          <hr>
                                 <ul>        <li class="card" *ngFor='let item of resp?.clasatnd[0]'  style="width:230px; height:240px">
                                                 <div class="single_course">
@@ -72,7 +72,7 @@
 
             
 </mat-tab>
-<mat-tab label="Active Booked Classes"  *ngIf='resp?.curntdayatnd[0].length > 0 || resp?.curntdayatnd[1].length > 0'> 
+<mat-tab label="Today's Classes"  *ngIf='resp?.curntdayatnd[0].length > 0 || resp?.curntdayatnd[1].length > 0'> 
         <mat-card class="mat">
                 <h2 class="head">Classes to attend today.<h5 class="head">(Meeting Link will be shown 15 minutes before the class starts)</h5></h2>
 
@@ -215,7 +215,7 @@
         <br>
 </mat-tab>
 -->
-<mat-tab label="Taken Classes"  *ngIf='resp?.clastook[0].length > 0 || resp?.clastook[1].length > 0'> 
+<mat-tab label="Classes took (History)"  *ngIf='resp?.clastook[0].length > 0 || resp?.clastook[1].length > 0'> 
         <mat-card class="mat">
                 <h2 class="head">Classes you took.</h2>
                  <hr>
@@ -270,7 +270,7 @@
         </mat-card>
             
 </mat-tab>
-<mat-tab label="Active Posted Classes" *ngIf='resp?.curntdaytke[0].length > 0 || resp?.curntdaytke[1].length > 0'> 
+<mat-tab label="Start Class Today" *ngIf='resp?.curntdaytke[0].length > 0 || resp?.curntdaytke[1].length > 0'> 
         <mat-card class="mat">
                 <h2 class="head">Classes to take today.<h5 class="head">(Meeting Link will be shown 15 minutes before the class starts)</h5></h2>
         
