@@ -30,9 +30,14 @@ import { AccountdetailsComponent} from './accountdetails/accountdetails.componen
 import {StudentsearchComponent} from './studentsearch/studentsearch.component';
 import {StudentpostComponent} from'./studentpost/studentpost.component';
 import {DailyclassComponent } from './dailyclass/dailyclass.component';
+import { RecordvComponent } from './recordv/recordv.component';
 
 
 const routes: Routes = [
+  {
+    path:'record',
+    component:RecordvComponent
+  },
   {
     path:'daily',
     component:DailyclassComponent

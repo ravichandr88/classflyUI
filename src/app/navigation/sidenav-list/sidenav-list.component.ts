@@ -217,5 +217,17 @@ export class SidenavListComponent implements OnInit {
           {
             window.open(url);
           }
+
+      openrecord()
+      {
+        if(sessionStorage.getItem('user'))
+        {
+          this.router.navigate(['record'])
+        }
+        else
+        {
+          this.dialog.open(LoginComponent);
+        }
+      }
 }
 

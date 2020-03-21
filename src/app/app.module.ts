@@ -60,6 +60,7 @@ import { StudentpostComponent } from './studentpost/studentpost.component';
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'angular4-social-login';
 import { DailyclassComponent } from './dailyclass/dailyclass.component';
 import { StdntslistComponent } from './stdntslist/stdntslist.component';
+import { RecordvComponent } from './recordv/recordv.component';
 
 
 const google_oauth_client_id:string =  '66089437958-9qai3nufijclobprh164n62hfcparv6i.apps.googleusercontent.com' 
@@ -122,7 +123,8 @@ export function provideConfig() {
     StudentsearchComponent,
     StudentpostComponent,
     DailyclassComponent,
-    StdntslistComponent
+    StdntslistComponent,
+    RecordvComponent
   ],
   imports: [
     BrowserModule,

@@ -45,7 +45,7 @@
 
   <a mat-list-item routerLink="/" (click)="onSidenavClose()">
    <img src="assets/img/f-icons/search.png" alt="">
-    <span class="nav-caption">Home</span>
+    <span class="nav-caption">Book Class</span>
  </a>  
 
 
@@ -53,6 +53,10 @@
    <img src="assets/img/f-icons/profile.png" alt="">
     <span class="nav-caption">Daily Classes</span>
  </a>
+ <a mat-list-item  (click)="onSidenavClose()" (click)="openrecord()">
+   <img src="assets/img/f-icons/search.png" alt="">
+    <span class="nav-caption">Recorded Class</span>
+ </a>  
 
 
   <a mat-list-item *ngIf="!user"  (click)="onSidenavClose()" (click)="onCreateSignUp()">
