@@ -94,7 +94,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private _socioAuthServ: AuthService,public dialogRef: MatDialogRef<SignupComponent>,private formBuilder : FormBuilder,private data : DataService, private router : Router) { }
+  constructor(private ngxService: NgxUiLoaderService,private _socioAuthServ: AuthService,public dialogRef: MatDialogRef<SignupComponent>,private formBuilder : FormBuilder,private data : DataService, private router : Router) { }
 
   myForm : FormGroup
   submitted : boolean = false
